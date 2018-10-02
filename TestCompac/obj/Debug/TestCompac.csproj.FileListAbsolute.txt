@@ -1,0 +1,6 @@
+c:\users\carlosjm\documents\visual studio 2017\Projects\TestCompac\TestCompac\bin\Debug\TestCompac.exe.config
+c:\users\carlosjm\documents\visual studio 2017\Projects\TestCompac\TestCompac\bin\Debug\TestCompac.exe
+c:\users\carlosjm\documents\visual studio 2017\Projects\TestCompac\TestCompac\bin\Debug\TestCompac.pdb
+c:\users\carlosjm\documents\visual studio 2017\Projects\TestCompac\TestCompac\obj\Debug\TestCompac.csprojResolveAssemblyReference.cache
+c:\users\carlosjm\documents\visual studio 2017\Projects\TestCompac\TestCompac\obj\Debug\TestCompac.exe
+c:\users\carlosjm\documents\visual studio 2017\Projects\TestCompac\TestCompac\obj\Debug\TestCompac.pdb
