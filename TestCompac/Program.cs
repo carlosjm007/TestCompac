@@ -40,7 +40,7 @@ class Program
         while (iteratedNumber < 1000)
         {
             approved = true;
-            sampleNumber = new Random().Next(0, 9999);
+            sampleNumber = sampleNumber + 1;
             string numberApproved;
 
             // Has been the sample already analyzed?
