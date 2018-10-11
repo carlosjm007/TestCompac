@@ -31,9 +31,6 @@ class Program
         // Number used to be analyzed.
         int sampleNumber = 0;
 
-        // Array which shows when a sample has been already analyzed.
-        bool[] sampleRepeated = new bool[10000];
-
         // Array used to keep separate the digits.
         int[] digits = new int[] { 0, 0, 0, 0 };
 
@@ -43,41 +40,35 @@ class Program
             sampleNumber = sampleNumber + 1;
             string numberApproved;
 
-            // Has been the sample already analyzed?
-            if (!sampleRepeated[sampleNumber])
+            // Separate the digits
+            digits[3] = sampleNumber % 10;
+            digits[2] = sampleNumber / 10 % 10;
+            digits[1] = sampleNumber / 100 % 10;
+            digits[0] = sampleNumber / 1000 % 10;
+
+            //  How many digits are there
+            int result = digits.Distinct().Count();
+
+            //  Validation for repeated digits
+            if (result != 4)
             {
-                sampleRepeated[sampleNumber] = true;
-
-                // Separate the digits
-                digits[3] = sampleNumber % 10;
-                digits[2] = sampleNumber / 10 % 10;
-                digits[1] = sampleNumber / 100 % 10;
-                digits[0] = sampleNumber / 1000 % 10;
-
-                //  How many digits are there
-                int result = digits.Distinct().Count();
-
-                //  Validation for repeated digits
-                if (result != 4)
-                {
-                    approved = false;
-                }
-
-                //  Validation for incremental digits
-                if (digits[0] < digits[1] && digits[1] < digits[2] && digits[2] < digits[3])
-                {
-                    approved = false;
-                }
-
-                //  If everything is ok, the sample will be printed
-                if (approved)
-                {
-                    iteratedNumber = iteratedNumber + 1;
-                    numberApproved = string.Join("", digits);
-                    Console.WriteLine($"{iteratedNumber}\t{numberApproved}");
-                }
-                sampleNumber = sampleNumber + 1;
+                approved = false;
             }
+
+            //  Validation for incremental digits
+            if (digits[0] < digits[1] && digits[1] < digits[2] && digits[2] < digits[3])
+            {
+                approved = false;
+            }
+
+            //  If everything is ok, the sample will be printed
+            if (approved)
+            {
+                iteratedNumber = iteratedNumber + 1;
+                numberApproved = string.Join("", digits);
+                Console.WriteLine($"{iteratedNumber}\t{numberApproved}");
+            }
+            sampleNumber = sampleNumber + 1;
         }
         // Keep the console window open in debug mode.
         Console.WriteLine("Press any key to exit.");
